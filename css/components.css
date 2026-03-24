@@ -1,0 +1,10 @@
+#cursor{
+    background-color: var(--color-acid);
+    height: 0.2rem;
+    margin-bottom: 2rem;
+}
+
+header a#yo{
+    color: var(--color-acid);
+    font-size: 2rem;
+}
