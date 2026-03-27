@@ -198,6 +198,8 @@ footer{
 
     .hero-left{
         margin-bottom: 4rem;
+        width: 100%;
+        
         
         #available {
             padding: 1rem;
@@ -208,6 +210,7 @@ footer{
 
         h1{
             margin-bottom: 3rem;
+            word-break: break-word;
         }
 
         p{
@@ -217,6 +220,7 @@ footer{
         .links{
             display: flex;
             justify-content: start;
+            flex-wrap:wrap;
             gap: 3rem;
 
             a{
