@@ -7,60 +7,86 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <div id="cursor"></div>
+
+    <section id="hero">
+        <div class="hero-bg-bubble bubble1"></div>
+        <div class="hero-bg-bubble bubble2"></div>
+        <div class="hero-bg-bubble bubble3"></div>
+    </section>
     <header>
-        <div id="cursor"></div>
-        <section>
-            <a href="" id="yo">Irene Mendoza</a>
+        <div id="line"></div>
+        <section id="navbar">
+            <p id="logo">Irene Mendoza <span>.</span></p>
+            <button id="menu-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/></svg>
+            </button>
             <nav>
-                <ul>
+                <ul id="menu">
+                    <li class="active">
+                        <a href="index.html">Inicio</a>
+                        <span>.</span>
+                    </li>
                     <li>
                         <a href="about.html">Sobre mi</a>
+                        <span>.</span>
                     </li>
                     <li>
                         <a href="projects.html">Proyectos</a>
+                        <span>.</span>
                     </li>
                     <li>
-                        <a href="">Stack</a>
+                        <a href="stack.html">Stack</a>
+                        <span>.</span>
                     </li>
                     <li>
-                        <a href="">Contacto</a>
+                        <a href="contact.html">Contacto</a>
+                        <span>.</span>
                     </li>
                 </ul>
             </nav>
         </section>
     </header>
-    <main>
-        <section>
+    <main class="main-index">
+        <section class="hero-left">
             <span id="available">* DISPONIBLE PARA PROYECTOS</span>
             <h1>IRENE <span>MENDOZA</span></h1>
-            <p>Fullstack Developer cunstruyendo productos que importan</p>
-            <div>
-                <a href="">VER PROYECTOS</a>
-                <a href="">HABLEMOS</a>
+            <p>Fullstack Developer construyendo productos que importan</p>
+            <div class="links">
+                <a href="projects.html" class="btn btn-primary">VER PROYECTOS</a>
+                <a href="contact.html" class="btn btn-secondary">HABLEMOS</a>
             </div>
         </section>
-        <section>
-            <div>
-                <span>STATUS</span>
-                <span>·ONLINE</span>
+        <section class="hero-right">
+            <div id="hero-right-header">
+                <span id="status">STATUS</span>
+                <span id="online">·ONLINE</span>
             </div>
-            <ul>
+            <ul id="cv">
                 <li>
-                    <span>12+</span> PROYECTOS
+                    4+<span>PROYECTOS</span>
                 </li>
                 <li>
-                    <span>1+</span> AÑOS
+                    1+<span>AÑOS</span> 
+                </li>
+                <li>
+                    ∞<span>ENTUSIASMO</span> 
                 </li>
             </ul>
+            <hr>
             <ul id="stack">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Python</li>
                 <li>JavaScript</li>
+                <li>Python</li>
                 <li>Django</li>
                 <li>PostgreSQL</li>
+                <li>Tailwind</li>
+                <li>Git</li>
             </ul>
         </section>
     </main>
+    <footer>
+        <span>© 2026 <span class="footer-acid">Irene Mendoza</span>. Diseñado & desarrollado con mucho ♥.</span>
+    </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>

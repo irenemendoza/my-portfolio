@@ -38,8 +38,38 @@
     font-display: swap;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Control del scrollbar en Firefox y en Chromium */
+html{
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-acid);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--color-dark);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--color-acid);
+}
+
 body{
-    background-color: var(--color-black);
+    background-color: var(--color-dark);
+    color: var(--white);
+    font-family: 'Space Mono', monospace;
+    cursor: none;
+    overflow-x: hidden;
+}
+
+nav{
+    color: var(--color-white)
 }
 
 a{
@@ -54,8 +84,8 @@ h1{
     color: var(--color-white);
     font-size: 6rem;
     
+    & span{
+        color:var(--color-coral);
+    }
 }
 
-h1 span{
-    color:var(--color-coral);
-}
