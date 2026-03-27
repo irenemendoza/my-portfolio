@@ -685,6 +685,7 @@ footer{
             width: 100%;
             margin-bottom: 2rem;
             outline: none;
+            color: var(--color-white);
         }
         .form-input:focus{
             border-color: var(--color-acid);
