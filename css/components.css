@@ -209,6 +209,7 @@ footer{
         }
 
         h1{
+            font-size: 4.8rem;
             margin-bottom: 3rem;
             word-break: break-word;
         }
@@ -339,6 +340,9 @@ footer{
         grid-template-columns: 1fr 1fr;
         align-items: center;
 
+        h1{
+            font-size: 6rem;
+        }
         .links{
             display: flex;
             justify-content: space-around;
