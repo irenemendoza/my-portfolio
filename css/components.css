@@ -190,6 +190,9 @@ footer{
     .footer-acid{
         color: var(--color-acid);
     }
+    .footer-coral{
+        color: var(--color-coral);
+    }
     @media (min-width: 768px) {
         font-size: 0.7rem;
     }
