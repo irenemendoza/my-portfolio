@@ -178,8 +178,8 @@ header section#navbar{
 }
 
 footer{
-    padding: 2rem;
-    font-size: 0.75rem;
+    padding: 1.8rem;
+    font-size: 0.6rem;
     color: var(--color-white);
     background-color: var(--color-black);
     .footer-acid{
@@ -194,6 +194,7 @@ footer{
     flex-direction: column;
     padding: 3rem;
     align-items: center;
+    max-width: 100vw;
 
     .hero-left{
         margin-bottom: 4rem;
@@ -330,7 +331,7 @@ footer{
     @media (min-width: 768px) {
         padding: 2rem;
         display: grid;
-        min-height: 76vh;
+        min-height: 77vh;
         grid-template-columns: 1fr 1fr;
         align-items: center;
 
