@@ -436,7 +436,7 @@ footer{
     }
 
     @media (min-width: 768px) {
-        min-height: 79vh;
+        min-height: 81vh;
         padding: 2rem;
         display: flex;
         justify-content: space-between;
@@ -516,7 +516,7 @@ footer{
     }
 
     @media (min-width: 768px) {
-        min-height: 82vh;
+        min-height: 84vh;
         padding: 2rem;
 
         h1{
@@ -611,7 +611,7 @@ footer{
     }
 
     @media (min-width: 768px) {
-        min-height: 76vh;
+        min-height: 83vh;
         padding: 2rem;
         h1{
             font-size: 5rem;
@@ -718,7 +718,7 @@ footer{
     }
 
     @media (min-width: 768px) {
-        min-height: 82vh;
+        min-height: 83vh;
         padding: 2rem;
         display: flex;
         align-items: center;
