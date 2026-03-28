@@ -68,6 +68,10 @@ header{
     position: relative;
 }
 
+#logo{
+    font-family: 'Syne';
+}
+
 header section#navbar{
     display: flex;
     justify-content: space-between;
@@ -79,6 +83,10 @@ header section#navbar{
         border: none;
         cursor: none;
         display: block;
+    }
+
+    nav{
+        display: none;
     }
     
     svg{
@@ -189,6 +197,8 @@ footer{
     background-color: var(--color-black);
     .footer-acid{
         color: var(--color-acid);
+        font-family: 'Syne';
+        font-size: 0.85rem;
     }
     .footer-coral{
         color: var(--color-coral);
@@ -214,19 +224,23 @@ footer{
         
         #available {
             padding: 1rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.2rem;
             display:inline-block;
             background-color: var(--color-acid);
             margin-bottom: 4rem;
         }
 
         h1{
-            font-size: 4.6rem;
+            font-weight: 800;
+            font-size: 3rem;
             margin-bottom: 3rem;
             word-break: break-word;
         }
 
         p{
-            color: var(--color-white);
+            font-family: 'Syne', sans-serif;
+            color: var(--color-gray);
             margin-bottom: 3rem;
         }
         .links{
@@ -237,6 +251,8 @@ footer{
 
             a{
                 padding: 1rem;
+                font-size: 0.8rem;
+                letter-spacing: 0.2rem;
             }
             #index-projects{
                 background-color: var(--color-acid);
@@ -283,18 +299,23 @@ footer{
             justify-content: space-between;
             padding: 0;
             margin-bottom: 3rem;
-            span{
-                color: var(--color-white);
-                opacity: 0.6;
-                font-size: 1rem;
-                display: block;
-                margin-top: 1rem;
-            }
             li{
                 color: var(--color-acid);
-                font-weight: bold;
                 font-size: 3rem;
+                font-family: 'Syne', sans-serif;
+                font-weight: 800;
+                span{
+                    font-size: 0.9rem;
+                    letter-spacing: 0.2rem;
+                    color: var(--color-gray);
+                    display: block;
+                    margin-top: 1rem;
+                    font-family: 'Space Mono', monospace;
+                    font-weight: lighter;
+                }
+            
             }
+            
         }
 
         hr{
@@ -352,7 +373,7 @@ footer{
         align-items: center;
 
         h1{
-            font-size: 6rem;
+            font-size: 7rem;
         }
         .links{
             display: flex;
@@ -380,14 +401,14 @@ footer{
     #about-content{
         margin-bottom: 3rem;
             h1{
+                font-family: 'Syne';
                 font-size: 2.8rem;
                 line-height: 3.5rem;
                 margin-bottom: 3rem;
             }
             p{
                 line-height: 1.8rem;
-                color: var(--color-white);
-                opacity: 0.5;
+                color: var(--color-gray);
                 margin-bottom: 1.5rem;
             }
             
@@ -401,16 +422,20 @@ footer{
             padding: 1rem;
             background-color: var(--color-black);
             color: var(--color-white);
-            width: fit-content;
+            width: 200px;
             
             .about-box-num{
+                text-align: center;
+                font-family: 'Syne', sans-serif;
                 font-size: 3rem;
-                font-weight: 600;
+                font-weight: 800;
+                margin-bottom: 1rem;
             }
             .about-box-desc{
                 font-size: 0.8rem;
                 font-weight: 100;
-                opacity: 0.5;
+                color: var(--color-gray);
+                text-align: center;
             }
         }
         .about-box::before{
@@ -469,6 +494,7 @@ footer{
 #main-projects{
     padding: 1.5rem;
     h1{
+        font-family: 'Syne';
         font-size: 2.8rem;
         line-height: 3.5rem;
         margin-bottom: 3rem;
@@ -482,14 +508,19 @@ footer{
         transition: transform 0.2s, box-shadow 0.2s;
 
         h3{
-            opacity: 0.5;
+            font-family: 'Syne', sans-serif;
+            color: var(--color-gray);
             margin-bottom: 1rem;
+            font-size: 1rem;
+            letter-spacing: 0.1rem;
         }
         h2{
+            font-family: 'Syne', sans-serif;
             margin-bottom: 1rem;
+            font-weight: bold;
         }
         p{
-            opacity: 0.5;
+            color: var(--color-gray);
             margin-bottom: 1rem;
         }
         ul{
@@ -500,13 +531,16 @@ footer{
             margin-bottom: 2rem;
             li{
                 background-color: var(--color-dark);
-                padding: 1rem;
+                padding: 0.8rem;
                 border: 1px solid var(--color-white);
-                opacity: 0.5;
+                color: var(--color-gray);
             }
         }
         a{
             color: var(--color-acid);
+            font-family: 'Mono Space', monospace;
+            font-size: 0.8rem;
+            letter-spacing: 0.1rem;
         }
     }
 
@@ -520,6 +554,7 @@ footer{
         padding: 2rem;
 
         h1{
+            font-family: 'Syne', sans-serif;
             font-size: 5rem;
             line-height: 5rem;
             width: 50%;
@@ -640,7 +675,7 @@ footer{
         }
         p{
             color: var(--color-gray);
-            line-height: 1.5rem;
+            line-height: 2rem;
             margin-bottom: 3rem;
         }
         ul{
@@ -680,6 +715,8 @@ footer{
         }
         .form-label{
             color: var(--color-white);
+            font-size: 0.8rem;
+            letter-spacing: 0.1rem;
         }
         .form-input{
             background-color: var(--color-black);
@@ -703,6 +740,8 @@ footer{
         }
 
         button{
+            font-size: 0.8rem;
+            letter-spacing: 0.2rem;
             margin: 0;
             padding: 1rem;
             width: 100%;
