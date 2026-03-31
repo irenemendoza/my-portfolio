@@ -513,13 +513,40 @@ footer{
         margin-bottom: 3rem;
     }
 
+    .about-content{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
     .project{
         background-color: var(--color-black);
         padding: 2rem;
         color: var(--color-white);
         font-weight: 100;
         transition: transform 0.2s, box-shadow 0.2s;
+        width: 400px;
 
+        .project-enunciado{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .wip{
+                padding: 0.5rem 1rem;
+                background-color: var(--color-acid);
+                color: black;
+            }
+        
+        img{
+                object-fit: content;
+                margin-bottom: 1rem;
+                width: 350px;
+                height: 350px;
+            }
+        
         h3{
             font-family: 'Syne', sans-serif;
             color: var(--color-gray);
