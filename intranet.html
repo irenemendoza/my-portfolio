@@ -27,21 +27,35 @@
             <div>
                 <h3>Aplicación Web Interna - 2025</h3>
                 <h1>LEVANTE WAVES <span>HOTEL INTRANET</span></h1>
-                <a href="">VER DEMO EN VIVO -></a>
-                <a href="">VER REPOSITORIO -></a>
+                <div class="links">
+                    <a id="demo" href="">VER DEMO EN VIVO -></a>
+                    <a id="repo" href="">VER REPOSITORIO -></a>
+                </div>
+                
             </div>
         </section>
         <hr class="separacion-project">
         <section class="project-description">
             <h3>// 01 - DESCRIPCIÓN</h3>
             <h2>¿De qué trata?</h2>
-            <p></p>
+            <h4>EL PROBLEMA</h4>
+            <p>En muchos hoteles pequeños y medianos la coordinación entre departamentos sigue siendo manual: papel, bolígrafo y el recepcionista de turno como único nexo de información entre limpieza, mantenimiento y dirección. Un familiar que trabaja en un hotel me trasladó esta situación, y mi experiencia previa trabajando en un hotel en Edimburgo me permitió entender de primera mano los cuellos de botella operativos: tareas de limpieza que no se asignan a tiempo, incidencias de mantenimiento que se pierden, y fichajes de entrada y salida que nadie registra de forma fiable.</p>
+            <h4>LA SOLUCIÓN</h4>
+            <p>Diseñé y desarrollé una intranet de gestión hotelera completa con Django, modelando 8 roles reales de empleado (desde director hasta personal de mantenimiento), cada uno con su propio dashboard y permisos específicos. La arquitectura sigue el patrón MVT de Django con renderizado en servidor, una decisión deliberada: para una herramienta interna sin necesidad de API pública ni frontend desacoplado, Django MVT ofrece rapidez de desarrollo, menor complejidad en el despliegue y una curva de mantenimiento más baja que una solución con DRF + SPA.</p>
+            <p>Decisiones técnicas clave:</p>
+            <ul id="decisiones">
+                <li><strong>Control de acceso por roles</strong> con permisos granulares por vista, no solo por modelo. Cada perfil ve y puede hacer exactamente lo que le corresponde.</li>
+                <li><strong>Señales de Django (post_save)</strong> para la creación automática de perfiles de empleado, con exclusión explícita de superusuarios tras detectar un bug en producción que bloqueaba la aplicación.</li>
+                <li><strong>Constraint UniqueConstraint</strong> condicional en PostgreSQL para garantizar que un empleado no pueda tener dos fichajes abiertos simultáneamente.</li>
+                <li>Separación de settings en base.py, development.py y production.py con variables de entorno gestionadas por <strong>python-decouple</strong>.</li>
+                <li>Despliegue en Digital Ocean con uWSGI + Nginx gestionado por <strong>CloudPanel</strong>, incluyendo certificado SSL con <strong>Let's Encrypt</strong>.</li>
+            </ul>
         </section>
         <hr class="separacion-project">
-        <section>
+        <section class="project-description">
             <h3>// 02 - STACK</h3>
             <h2>Tecnologías utilizadas.</h2>
-            <ul>
+            <ul id="stack-list">
                 <li>Python</li>
                 <li>Django</li>
                 <li>PostgreSQL</li>
@@ -50,48 +64,76 @@
             </ul>
         </section>
         <hr class="separacion-project">
-        <section>
+        <section class="project-description">
             <h3>// 03 - CAPTURAS</h3>
             <h2>El proyecto en imágenes.</h2>
+            <p class="image-description">Dashboard de un supervisor:</p>
+            <a class="lightbox" href="assets/images/projects/ss-Dashboardstaff.png"><img src="assets/images/projects/ss-Dashboardstaff.png" alt="Captura de pantalla del dashboard del staff"></a>
+            <p class="image-description">Dashboard del staff:</p>
+            <a class="lightbox" href="assets/images/projects/ss-Dashboardstaff.png"><img src="assets/images/projects/ss-Dashboardstaff.png" alt="Captura de pantalla de staff"></a>
+            <p class="image-description">Estadísticas personales:</p>
+            <a class="lightbox" href="assets/images/projects/ss-Estadisticas.png"><img src="assets/images/projects/ss-Estadisticas.png" alt="Captura de pantalla del panel de estadísticas"></a>
+            <p class="image-description">Checkin exitoso:</p>
+            <a class="lightbox" href="assets/images/projects/ss-Checkin.png"><img src="assets/images/projects/ss-Checkin.png" alt="Captura de pantalla de checkin exitoso"></a>
+            <p class="image-description">Checkout exitoso:</p>
+            <a class="lightbox" href="assets/images/projects/ss-Checkout.png"><img src="assets/images/projects/ss-Checkout.png" alt="Captura de pantalla de checkout exitoso"></a>
         </section>
         <hr class="separacion-project">
-        <section>
+        <section class="project-description">
             <h3>// 04 - RETOS & APRENDIZAJES</h3>
             <h2>Lo que aprendí.</h2>
+            <p>El proyecto no llegó a implantarse en el hotel real porque la dirección descartó la inversión, pero el proceso de desarrollo generó aprendizajes técnicos concretos que puedo defender en cualquier entrevista:</p>
             <article>
                 <span>01</span>
                 <div>
                     <h4>Conflicto entre señales de Django y el superusuario</h4>
-                    <p>Al resetear la base de datos y recrear el superusuario, la señal post-save asociada al modelo User intentaba crear automáticamente un perfil Employee para él, causando un error.</p>
-                    <p>Lo resolví añadiendo una condición en el handler para excluir a los superusuarios del proceso de creación automática.</p>
+                    <p>Al resetear la base de datos y recrear el superusuario, la señal post_save asociada al modelo User intentaba crear automáticamente un perfil Employee para él, provocando un error que bloqueaba la aplicación.</p>
+                    <p>Lo resolví añadiendo una condición en el handler para excluir a los superusuarios del proceso de creación automática (if not instance.is_superuser).</p>
                 </div>
             </article>
             <article>
                 <span>02</span>
                 <div>
-                    <h4>Integración de Chart.js para visualización de datos</h4>
-                    <p>Necesitaba mostrar estadísticas de asistencia de forma visual y nunca había usado ninguna librería de gráficos.</p>
-                    <p>El reto fue aprender Chart.js desde cero e integrarlo con Django, pasando los datos desde las vistas del servidor a JavaScript de forma correcta. El resultado fueron gráficas interactivas integradas en los dashboards del sistema.</p>
+                    <h4>Integración de Chart.js con datos del servidor</h4>
+                    <p>Necesitaba mostrar estadísticas de asistencia de forma visual y nunca había usado ninguna librería de gráficos. El reto principal fue pasar datos desde las vistas de Django a JavaScript: los diccionarios y listas de Python no se pueden inyectar directamente en el template, sino que requieren serialización con json.dumps() para que Chart.js los interprete correctamente.</p>
+                    <p>El resultado fueron gráficas interactivas integradas en los dashboards de cada rol.</p>
                 </div>
             </article>
             <article>
                 <span>03</span>
                 <div>
-                    <h4>Gestión de señales de Django en el entorno de tests</h4>
-                    <p>Al ejecutar los tests, la señal post_save que crea automáticamente un perfil Employee al crear un User causaba conflictos: los tests fallaban porque intentaban crear un Employee para un usuario que ya lo tenía.</p>
-                    <p>La solución fue desconectar la señal en setUpClass() y reconectarla en tearDownClass(), evitando efectos secundarios entre pruebas.</p>
+                    <h4>Interferencia de señales en el entorno de tests</h4>
+                    <p>Al ejecutar los tests unitarios, la señal post_save disparaba la creación automática de un Employee sin departamento asignado, provocando un IntegrityError porque el campo department no admite NULL.</p>
+                    <p>La solución fue desconectar la señal en setUpClass() y reconectarla en tearDownClass(), aislando los tests de efectos secundarios y permitiendo crear los objetos de prueba con control total sobre sus dependencias.</p>
                 </div>
             </article>
-            
+            <article>
+                <span>04</span>
+                <div>
+                    <h4>Fichajes huérfanos que bloqueaban nuevos registros</h4>
+                    <p>Registros de asistencia de sesiones anteriores que nunca recibieron check_out impedían que los empleados pudieran fichar de nuevo, porque un UniqueConstraint condicional garantiza que solo pueda existir un fichaje abierto por empleado.</p>
+                    <p>Este problema me enseñó a diseñar la lógica de negocio pensando en estados inconsistentes reales, no solo en el flujo ideal. También me obligó a alinear los filtros de la vista con la validación del modelo para que la interfaz reflejara correctamente el estado real de los datos.</p>
+                </div>
+            </article>
+            <article>
+                <span>05</span>
+                <div>
+                    <h4>Despliegue en producción con CloudPanel y Let's Encrypt</h4>
+                    <p>El despliegue en Digital Ocean presentó varios problemas encadenados: disco lleno en el droplet de 10GB, archivos estáticos devolviendo 403/404 porque CloudPanel esperaba una estructura de directorios específica, y el certificado SSL fallando porque Nginx redirigía todo el tráfico HTTP a HTTPS antes de que Let's Encrypt pudiera verificar el dominio.</p>
+                    <p>Resolverlo requirió entender la cadena completa: separar los bloques HTTP y HTTPS en el vhost de Nginx, crear enlaces simbólicos para los estáticos, y liberar espacio eliminando caché de paquetes innecesarios.</p>
+                </div>
+            </article>
         </section>
+        <footer>
+            <a href="projects.html">VOLVER A todos los proyectos</a>
+        </footer>
     </main>
 
-    <footer>
-        <div>
-            <p>VOLVER A <span>Todos los proyectos</span></p>
-        </div>
-        <span class="footer-acid">Irene Mendoza</span><span class="footer-coral">.</span>
-    </footer>
+    
+    <div id="lightbox">
+        <button id="lightbox-close" aria-label="Cerrar">&#x2715;</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
     <script src="js/main.js"></script>
 </body>
 </html>
