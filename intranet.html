@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Hotel Intranet Project</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="cursor"></div>
+
+    <section id="hero">
+        <div class="hero-bg-bubble bubble1"></div>
+        <div class="hero-bg-bubble bubble2"></div>
+        <div class="hero-bg-bubble bubble3"></div>
+    </section>
+    <header>
+        <div id="line"></div>
+        <section id="navbar">
+            <a href="index.html"><p id="logo">Irene Mendoza<span>.</span></p></a>
+            <a href="projects.html" class="to-projects"><- VOLVER A PROYECTOS</a>
+        </section>
+    </header>
+    <main id="main-project-detail">
+        <section class="project-header">
+            <img src="assets/images/projects/ss-intranethotel.png" alt="Imagen del inicio de sesión de la web">
+            <div>
+                <h3>Aplicación Web Interna - 2025</h3>
+                <h1>LEVANTE WAVES <span>HOTEL INTRANET</span></h1>
+                <a href="">VER DEMO EN VIVO -></a>
+                <a href="">VER REPOSITORIO -></a>
+            </div>
+        </section>
+        <hr class="separacion-project">
+        <section class="project-description">
+            <h3>// 01 - DESCRIPCIÓN</h3>
+            <h2>¿De qué trata?</h2>
+            <p></p>
+        </section>
+        <hr class="separacion-project">
+        <section>
+            <h3>// 02 - STACK</h3>
+            <h2>Tecnologías utilizadas.</h2>
+            <ul>
+                <li>Python</li>
+                <li>Django</li>
+                <li>PostgreSQL</li>
+                <li>Bootstrap 5</li>
+                <li>Chart.js</li>
+            </ul>
+        </section>
+        <hr class="separacion-project">
+        <section>
+            <h3>// 03 - CAPTURAS</h3>
+            <h2>El proyecto en imágenes.</h2>
+        </section>
+        <hr class="separacion-project">
+        <section>
+            <h3>// 04 - RETOS & APRENDIZAJES</h3>
+            <h2>Lo que aprendí.</h2>
+            <article>
+                <span>01</span>
+                <div>
+                    <h4>Conflicto entre señales de Django y el superusuario</h4>
+                    <p>Al resetear la base de datos y recrear el superusuario, la señal post-save asociada al modelo User intentaba crear automáticamente un perfil Employee para él, causando un error.</p>
+                    <p>Lo resolví añadiendo una condición en el handler para excluir a los superusuarios del proceso de creación automática.</p>
+                </div>
+            </article>
+            <article>
+                <span>02</span>
+                <div>
+                    <h4>Integración de Chart.js para visualización de datos</h4>
+                    <p>Necesitaba mostrar estadísticas de asistencia de forma visual y nunca había usado ninguna librería de gráficos.</p>
+                    <p>El reto fue aprender Chart.js desde cero e integrarlo con Django, pasando los datos desde las vistas del servidor a JavaScript de forma correcta. El resultado fueron gráficas interactivas integradas en los dashboards del sistema.</p>
+                </div>
+            </article>
+            <article>
+                <span>03</span>
+                <div>
+                    <h4>Gestión de señales de Django en el entorno de tests</h4>
+                    <p>Al ejecutar los tests, la señal post_save que crea automáticamente un perfil Employee al crear un User causaba conflictos: los tests fallaban porque intentaban crear un Employee para un usuario que ya lo tenía.</p>
+                    <p>La solución fue desconectar la señal en setUpClass() y reconectarla en tearDownClass(), evitando efectos secundarios entre pruebas.</p>
+                </div>
+            </article>
+            
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <p>VOLVER A <span>Todos los proyectos</span></p>
+        </div>
+        <span class="footer-acid">Irene Mendoza</span><span class="footer-coral">.</span>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+            
