@@ -1,0 +1,110 @@
+main{
+    h1{
+        padding: 0 3rem;
+        font-family: 'Syne';
+        font-size: 2.8rem;
+        line-height: 3.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .about-content{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 2rem;
+    }
+
+    .project{
+        background-color: var(--color-black);
+        padding: 2rem;
+        color: var(--color-white);
+        font-weight: 100;
+        transition: transform 0.2s, box-shadow 0.2s;
+        width: 100%;
+        max-width: 400px;
+
+        .project-enunciado{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .wip{
+                padding: 0.5rem 1rem;
+                background-color: var(--color-acid);
+                color: black;
+            }
+
+        img{
+                object-fit: cover;
+                margin-bottom: 1rem;
+                width: 100%;
+                height: 350px;
+            }
+        
+        h3{
+            font-family: 'Syne', sans-serif;
+            color: var(--color-gray);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            letter-spacing: 0.1rem;
+        }
+        h2{
+            font-family: 'Syne', sans-serif;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        p{
+            color: var(--color-gray);
+            margin-bottom: 1rem;
+        }
+        ul{
+            display: flex;
+            justify-content: start;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            li{
+                background-color: var(--color-dark);
+                padding: 0.8rem;
+                border: 1px solid var(--color-white);
+                color: var(--color-gray);
+            }
+        }
+        a{
+            color: var(--color-acid);
+            font-family: 'Mono Space', monospace;
+            font-size: 0.8rem;
+            letter-spacing: 0.1rem;
+        }
+        .saber_mas{
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .project:hover{
+        transform: translate(-1em, -1em);
+        box-shadow: 1em 1em 0 var(--color-acid);
+    }
+
+    @media (min-width: 768px) {
+        min-height: 84vh;
+        padding: 0 3rem;
+
+        h1{
+            font-family: 'Syne', sans-serif;
+            font-size: 5rem;
+            line-height: 5rem;
+            width: 50%;
+        }
+        .about-content{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap:2rem;
+            justify-items: center;
+        }
+    }
+}
+    

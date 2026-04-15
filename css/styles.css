@@ -1,3 +1,9 @@
 @import 'variables.css';
 @import 'base.css';
-@import 'components.css';
+@import 'layout.css';
+@import 'index.css';
+@import 'about.css';
+@import 'projects.css';
+@import 'stack.css';
+@import 'contact.css';
+@import 'project-detail.css';

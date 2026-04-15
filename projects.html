@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - projects</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/projects.css">
 </head>
-<body>
-    <div id="cursor"></div>
-    <section id="hero">
-        <div class="hero-bg-bubble bubble1"></div>
-        <div class="hero-bg-bubble bubble2"></div>
-        <div class="hero-bg-bubble bubble3"></div>
-    </section>
+<body id="projects">
     <header>
         <div id="line"></div>
         <section id="navbar">
-            <p id="logo">Irene Mendoza<span>.</span></p>
+            <a href="index.html">
+                <img src="logo.svg" alt="Logo personal" id="logo">
+            </a>
             <button id="menu-toggle">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/></svg>
             </button>
@@ -102,7 +101,7 @@
                     <li>Chart.js</li>
                 </ul>
                 <div class="cardlinks">
-                    <a href="intranet.html">¡Me interesa! Quiero saber más -></a>
+                    <a href="intranet.html" class="saber_mas">¡Me interesa! Quiero saber más -></a>
                     <a href="https://intranethotelera.irenemendoza.dev/" target="_blank" rel="noopener noreferrer">Ver proyecto -></a>
                 </div>                
             </article>
@@ -125,8 +124,17 @@
         </div>
     </main>
     <footer>
-        <span>© 2026 <span class="footer-acid">Irene Mendoza</span><span class="footer-coral">.</span> Diseñado & desarrollado con mucho ♥.</span>
+        <p>© 2026 <img src="logo.svg" alt="Logo personal"></p>
+        <p>Diseñado & desarrollado con mucho ♥.</p>
     </footer>
+    <div class="background">
+        <div id="cursor"></div>
+        <section id="hero">
+            <div class="hero-bg-bubble bubble1"></div>
+            <div class="hero-bg-bubble bubble2"></div>
+            <div class="hero-bg-bubble bubble3"></div>
+        </section>
+    </div>
     <script src="js/main.js"></script>
 </body>
 </html>

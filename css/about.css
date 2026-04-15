@@ -1,0 +1,95 @@
+main{
+    margin-bottom: 2rem;
+    padding: 0 3rem;
+
+    #about-content{
+        margin-bottom: 3rem;
+            h1{
+                font-family: 'Syne';
+                font-size: 2.8rem;
+                line-height: 3.5rem;
+                margin-bottom: 3rem;
+            }
+            p{
+                line-height: 1.8rem;
+                color: var(--color-gray);
+                margin-bottom: 1.5rem;
+            }
+            
+    }
+    section{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        .about-box{
+            position: relative;
+            padding: 1rem;
+            background-color: var(--color-black);
+            color: var(--color-white);
+            width: 200px;
+            
+            .about-box-num{
+                text-align: center;
+                font-family: 'Syne', sans-serif;
+                font-size: 3rem;
+                font-weight: 800;
+                margin-bottom: 1rem;
+            }
+            .about-box-desc{
+                font-size: 0.8rem;
+                font-weight: 100;
+                color: var(--color-gray);
+                text-align: center;
+            }
+        }
+        .about-box::before{
+            content: '';
+            width: 3px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .about-box:nth-child(1)::before{
+            background-color: var(--color-electric);
+        }
+        .about-box:nth-child(2)::before{
+            background-color: var(--color-coral);
+        }
+        .about-box:nth-child(3)::before{
+            background-color: var(--color-violet);
+        }
+        .about-box:hover{
+            border: 1px solid var(--color-acid);
+        }
+    }
+
+    @media (min-width: 768px) {
+        min-height: 81vh;
+        padding: 0 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        section{
+            justify-content: center;
+            
+        }
+    
+        #about-content{
+    
+            width: 60%;
+            h1{
+                font-size: 5rem;
+                line-height: 5rem;
+            }
+        }
+        
+        .about-box{
+            width: 50%;
+            .about-box-desc{
+                font-size: 1rem;
+                font-weight: 100;
+            }
+        }
+    }
+}

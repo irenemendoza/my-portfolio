@@ -1,0 +1,92 @@
+main{
+    padding: 0 3rem;
+    h1{
+        font-size: 2.8rem;
+        word-break: break-word;
+        line-height: 3.5rem;
+        margin-bottom: 3rem;
+    }
+
+    #stackstable{
+
+        .table{
+            margin-bottom: 3rem;
+        }
+
+        .tablename p{
+            padding: 1rem;
+            color: var(--color-gray);
+            border-bottom: 1px solid var(--color-gray);
+        }
+        ul{
+            padding:0;
+        }
+        li{
+            background-color: var(--color-black);
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            color: var(--color-white);
+            border: 1px solid var(--color-gray);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .table1 .tablename p::before{
+            display: inline-block;
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--color-violet);
+            
+        }
+
+        .table1 li:hover{
+            transform: translate(-0.5em, -0.5em);
+            box-shadow: 0.5em 0.5em 0 var(--color-violet);
+        }
+
+        .table2 .tablename p::before{
+            display: inline-block;
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--color-electric);
+            
+        }
+
+        .table2 li:hover{
+            transform: translate(-0.5em, -0.5em);
+            box-shadow: 0.5em 0.5em 0 var(--color-electric);
+        }
+
+        .table3 .tablename p::before{
+            display: inline-block;
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--color-coral);
+            
+        }
+
+        .table3 li:hover{
+            transform: translate(-0.5em, -0.5em);
+            box-shadow: 0.5em 0.5em 0 var(--color-coral);
+        }
+    }
+
+    @media (min-width: 768px) {
+        min-height: 83vh;
+        padding: 0 3rem;
+        h1{
+            font-size: 5rem;
+            line-height: 5rem;
+            width: 50%;
+        }
+        #stackstable{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+    }
+}
