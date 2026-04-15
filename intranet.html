@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Hotel Intranet Project</title>
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/elements.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/project-detail.css">
@@ -31,7 +32,7 @@
             </div>
         </section>
         <hr class="separacion-project">
-        <section class="project-description">
+        <section class="project-description project-problem">
             <h3>// 01 - DESCRIPCIÓN</h3>
             <h2>¿De qué trata?</h2>
             <div class="problem">
@@ -52,7 +53,7 @@
             </div>
         </section>
         <hr class="separacion-project">
-        <section class="project-description">
+        <section class="project-description project-stack">
             <h3>// 02 - STACK</h3>
             <h2>Tecnologías utilizadas.</h2>
             <ul id="stack-list">
@@ -64,7 +65,7 @@
             </ul>
         </section>
         <hr class="separacion-project">
-        <section class="project-description">
+        <section class="project-description project-captures">
             <h3>// 03 - CAPTURAS</h3>
             <h2>El proyecto en imágenes.</h2>
             <p class="image-description">Dashboard de un supervisor:</p>
@@ -85,50 +86,54 @@
             </div>
         </section>
         <hr class="separacion-project">
-        <section class="project-description">
-            <h3>// 04 - RETOS & APRENDIZAJES</h3>
-            <h2>Lo que aprendí.</h2>
-            <p>El proyecto no llegó a implantarse en el hotel real porque la dirección descartó la inversión, pero el proceso de desarrollo generó aprendizajes técnicos concretos que puedo defender en cualquier entrevista:</p>
-            <article>
-                <span>01</span>
-                <div>
-                    <h4>Conflicto entre señales de Django y el superusuario</h4>
-                    <p>Al resetear la base de datos y recrear el superusuario, la señal post_save asociada al modelo User intentaba crear automáticamente un perfil Employee para él, provocando un error que bloqueaba la aplicación.</p>
-                    <p>Lo resolví añadiendo una condición en el handler para excluir a los superusuarios del proceso de creación automática (if not instance.is_superuser).</p>
-                </div>
-            </article>
-            <article>
-                <span>02</span>
-                <div>
-                    <h4>Integración de Chart.js con datos del servidor</h4>
-                    <p>Necesitaba mostrar estadísticas de asistencia de forma visual y nunca había usado ninguna librería de gráficos. El reto principal fue pasar datos desde las vistas de Django a JavaScript: los diccionarios y listas de Python no se pueden inyectar directamente en el template, sino que requieren serialización con json.dumps() para que Chart.js los interprete correctamente.</p>
-                    <p>El resultado fueron gráficas interactivas integradas en los dashboards de cada rol.</p>
-                </div>
-            </article>
-            <article>
-                <span>03</span>
-                <div>
-                    <h4>Interferencia de señales en el entorno de tests</h4>
-                    <p>Al ejecutar los tests unitarios, la señal post_save disparaba la creación automática de un Employee sin departamento asignado, provocando un IntegrityError porque el campo department no admite NULL.</p>
-                    <p>La solución fue desconectar la señal en setUpClass() y reconectarla en tearDownClass(), aislando los tests de efectos secundarios y permitiendo crear los objetos de prueba con control total sobre sus dependencias.</p>
-                </div>
-            </article>
-            <article>
-                <span>04</span>
-                <div>
-                    <h4>Fichajes huérfanos que bloqueaban nuevos registros</h4>
-                    <p>Registros de asistencia de sesiones anteriores que nunca recibieron check_out impedían que los empleados pudieran fichar de nuevo, porque un UniqueConstraint condicional garantiza que solo pueda existir un fichaje abierto por empleado.</p>
-                    <p>Este problema me enseñó a diseñar la lógica de negocio pensando en estados inconsistentes reales, no solo en el flujo ideal. También me obligó a alinear los filtros de la vista con la validación del modelo para que la interfaz reflejara correctamente el estado real de los datos.</p>
-                </div>
-            </article>
-            <article>
-                <span>05</span>
-                <div>
-                    <h4>Despliegue en producción con CloudPanel y Let's Encrypt</h4>
-                    <p>El despliegue en Digital Ocean presentó varios problemas encadenados: disco lleno en el droplet de 10GB, archivos estáticos devolviendo 403/404 porque CloudPanel esperaba una estructura de directorios específica, y el certificado SSL fallando porque Nginx redirigía todo el tráfico HTTP a HTTPS antes de que Let's Encrypt pudiera verificar el dominio.</p>
-                    <p>Resolverlo requirió entender la cadena completa: separar los bloques HTTP y HTTPS en el vhost de Nginx, crear enlaces simbólicos para los estáticos, y liberar espacio eliminando caché de paquetes innecesarios.</p>
-                </div>
-            </article>
+        <section class="project-description project-retos">
+            <div class="project-retos-header">
+                <h3>// 04 - RETOS & APRENDIZAJES</h3>
+                <h2>Lo que aprendí.</h2>
+                <p>El proyecto no llegó a implantarse en el hotel real porque la dirección descartó la inversión, pero el proceso de desarrollo generó aprendizajes técnicos concretos que puedo defender en cualquier entrevista:</p>
+            </div>
+            <div class="project-retos-content">
+                <article>
+                    <span>01</span>
+                    <div>
+                        <h4>Conflicto entre señales de Django y el superusuario</h4>
+                        <p>Al resetear la base de datos y recrear el superusuario, la señal post_save asociada al modelo User intentaba crear automáticamente un perfil Employee para él, provocando un error que bloqueaba la aplicación.</p>
+                        <p>Lo resolví añadiendo una condición en el handler para excluir a los superusuarios del proceso de creación automática (if not instance.is_superuser).</p>
+                    </div>
+                </article>
+                <article>
+                    <span>02</span>
+                    <div>
+                        <h4>Integración de Chart.js con datos del servidor</h4>
+                        <p>Necesitaba mostrar estadísticas de asistencia de forma visual y nunca había usado ninguna librería de gráficos. El reto principal fue pasar datos desde las vistas de Django a JavaScript: los diccionarios y listas de Python no se pueden inyectar directamente en el template, sino que requieren serialización con json.dumps() para que Chart.js los interprete correctamente.</p>
+                        <p>El resultado fueron gráficas interactivas integradas en los dashboards de cada rol.</p>
+                    </div>
+                </article>
+                <article>
+                    <span>03</span>
+                    <div>
+                        <h4>Interferencia de señales en el entorno de tests</h4>
+                        <p>Al ejecutar los tests unitarios, la señal post_save disparaba la creación automática de un Employee sin departamento asignado, provocando un IntegrityError porque el campo department no admite NULL.</p>
+                        <p>La solución fue desconectar la señal en setUpClass() y reconectarla en tearDownClass(), aislando los tests de efectos secundarios y permitiendo crear los objetos de prueba con control total sobre sus dependencias.</p>
+                    </div>
+                </article>
+                <article>
+                    <span>04</span>
+                    <div>
+                        <h4>Fichajes huérfanos que bloqueaban nuevos registros</h4>
+                        <p>Registros de asistencia de sesiones anteriores que nunca recibieron check_out impedían que los empleados pudieran fichar de nuevo, porque un UniqueConstraint condicional garantiza que solo pueda existir un fichaje abierto por empleado.</p>
+                        <p>Este problema me enseñó a diseñar la lógica de negocio pensando en estados inconsistentes reales, no solo en el flujo ideal. También me obligó a alinear los filtros de la vista con la validación del modelo para que la interfaz reflejara correctamente el estado real de los datos.</p>
+                    </div>
+                </article>
+                <article>
+                    <span>05</span>
+                    <div>
+                        <h4>Despliegue en producción con CloudPanel y Let's Encrypt</h4>
+                        <p>El despliegue en Digital Ocean presentó varios problemas encadenados: disco lleno en el droplet de 10GB, archivos estáticos devolviendo 403/404 porque CloudPanel esperaba una estructura de directorios específica, y el certificado SSL fallando porque Nginx redirigía todo el tráfico HTTP a HTTPS antes de que Let's Encrypt pudiera verificar el dominio.</p>
+                        <p>Resolverlo requirió entender la cadena completa: separar los bloques HTTP y HTTPS en el vhost de Nginx, crear enlaces simbólicos para los estáticos, y liberar espacio eliminando caché de paquetes innecesarios.</p>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
     <footer>

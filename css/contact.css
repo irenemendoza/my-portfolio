@@ -1,5 +1,5 @@
 main{ 
-    padding: 0 3rem;
+    padding: 0 1.5rem;
     
     .hero-contact-left{
         
@@ -21,10 +21,13 @@ main{
                 width: 100%;
             }
             a{
-                
                 color: var(--color-white);
                 transition: color 0.2s;
                 font-size: 0.7rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
 
                 svg{
                     display: inline;
@@ -104,7 +107,12 @@ main{
             h1{
                 font-size: 5rem;
                 line-height: 5rem;
-            }  
+            }
+            ul a{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
         }
 
         .hero-contact-right{
