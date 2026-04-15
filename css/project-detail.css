@@ -1,5 +1,4 @@
 header{
-
     .navbar-project-detail{
         display: flex;
         justify-content: space-between;
@@ -68,23 +67,23 @@ header{
 
 main{
     .project-header{
-        padding: 0 3rem;
+        padding: 0 1.5rem;
         img{
             width: 100%;
             object-fit: contain;
             margin-bottom: 3rem;
         }
-        div{
+        .project-header-content{
             padding: 1.5rem;
         }
         h1{
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-family: 'Syne', 'sans-serif';
             margin-bottom: 2rem;
         }
         h3{
             color: var(--color-acid);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
         .links {
             display: flex;
@@ -117,7 +116,7 @@ main{
         }
     }
     hr{
-        margin: 0 3rem 3rem 3rem;
+        margin: 0 1.5rem 3rem 1.5rem;
         border: none;
         height: 2px;
         background: linear-gradient(to right, var(--color-acid), var(--color-dark));
@@ -199,13 +198,23 @@ main{
     .project-captures{
         padding: 0 2rem;
 
-        img{
-            margin-bottom: 2rem;
-            max-width: 100%;
+        a{
+            display: block;
+            margin-bottom: 3rem;
         }
 
-        img:last-of-type{
+        a:last-of-type{
             margin-bottom: 0;
+        }
+
+        img{
+            max-width: 100%;
+        }
+        .images-attendance{
+            margin-top: 3rem;
+            .image-checkin{
+                margin-bottom: 3rem;
+            }
         }
     }
         
@@ -246,17 +255,53 @@ main{
     /* El responsive para tablet del main */
 
     @media (min-width: 768px) {
-        h1{
-            font-size: 3rem;
+        
+
+        hr{
+            padding: 0 3rem;
         }
         .project-header{
             display: flex;
             flex-direction: cols;
             align-items: center;
-
+            justify-content: space-between;
+            padding: 0 3rem;
             img{
                 width: 60%;
                 padding: 1.5rem;
+                flex-shrink: 0;
+            }
+            .project-header-content{
+                min-width: 0;
+                width: 40%;
+            }
+            h1{
+                font-size: 3.5rem;
+                word-break: break-word;
+            }
+        }
+
+        .project-problem{
+            padding: 0 3rem;
+        }
+
+        .project-stack{
+            padding: 0 3rem;
+        }
+
+        .project-captures{
+            padding: 0 3rem;
+            a{
+                margin-bottom: 3rem;
+            }
+        }
+
+        .project-retos{
+            .project-retos-header{
+                padding: 0 3rem;
+            }
+            .project-retos-content{
+                padding: 0 3rem;
             }
         }
 
@@ -265,8 +310,10 @@ main{
             gap: 1rem;
         }
 
+        
+
         article{
-            padding: 2rem;
+            padding: 3rem;
             span{
                 font-size: 3rem;
                 min-width: 0;
