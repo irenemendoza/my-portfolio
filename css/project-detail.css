@@ -123,7 +123,6 @@ main{
     }
 
    .project-description{
-        /* Parte común */
         margin-bottom: 3rem;
 
         .problem{
@@ -176,6 +175,61 @@ main{
         }
     }
         
+        /* Demo */
+    .project-demo{
+        padding: 0 2rem;
+        
+        .demo-link{
+            display: inline-block;
+            color: var(--color-acid);
+            font-size: 0.8rem;
+            letter-spacing: 0.1rem;
+            margin-bottom: 2rem;
+        }
+
+        p{
+            color: var(--color-gray);
+            font-size: 0.75rem;
+            letter-spacing: 0.1rem;
+            margin-bottom: 1rem;
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+            overflow-x: auto;
+            display: block;
+
+            thead tr{
+                border-bottom: 2px solid var(--color-acid);
+            }
+
+            th{
+                color: var(--color-acid);
+                text-align: left;
+                letter-spacing: 0.15rem;
+                padding: 0.75rem 1rem;
+                font-weight: normal;
+            }
+
+            td{
+                color: var(--color-white);
+                padding: 0.75rem 1rem;
+                border-bottom: 1px solid var(--color-gray);
+            }
+
+            tr:last-child td{
+                border-bottom: none;
+            }
+
+            tr:hover td{
+                background-color: var(--color-black);
+            }
+        }
+    }
+
         /* Stack */
     .project-stack{
         padding: 0 2rem;
@@ -252,7 +306,7 @@ main{
  
 
 
-    /* El responsive para tablet del main */
+    /* El responsive para desktop del main */
 
     @media (min-width: 768px) {
         
@@ -278,6 +332,20 @@ main{
             h1{
                 font-size: 3.5rem;
                 word-break: break-word;
+            }
+        }
+
+        .project-demo{
+            padding: 0 3rem;
+
+            .demo-link{
+                display: block;
+            }
+
+            table{
+                display: table;
+                width: auto;
+                margin: 0 auto;
             }
         }
 
