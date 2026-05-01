@@ -30,10 +30,11 @@ if (menu && toggle) {
         menu.style.display = isOpen ? 'flex' : 'none';
     });
 
-    document.addEventListener('click', (e) => {
-        if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+    menu.addEventListener('click', (e) => {
+        if (e.target === menu) {
             isOpen = false;
             menu.style.display = 'none';
+            toggle.setAttribute('aria-expanded', 'false');
         }
     });
 }
