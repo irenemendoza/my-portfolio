@@ -24,8 +24,8 @@ if (menu && toggle) {
     }
 
     toggle.addEventListener('click', () => {
-        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', !expanded);
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', !expanded);
         isOpen = !isOpen;
         menu.style.display = isOpen ? 'flex' : 'none';
     });
