@@ -236,8 +236,10 @@ footer{
     color: var(--color-white);
     background-color: var(--color-black);
     text-align: center;
+    
     img{
         width: 120px;
+        vertical-align: middle;
     }
     @media (min-width: 768px) {
         font-size: 0.7rem;
